@@ -1,0 +1,13 @@
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\bin\Debug\netcoreapp3.1\task.exe
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\bin\Debug\netcoreapp3.1\task.deps.json
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\bin\Debug\netcoreapp3.1\task.runtimeconfig.json
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\bin\Debug\netcoreapp3.1\task.runtimeconfig.dev.json
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\bin\Debug\netcoreapp3.1\task.dll
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\bin\Debug\netcoreapp3.1\task.pdb
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.csprojAssemblyReference.cache
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.AssemblyInfoInputs.cache
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.AssemblyInfo.cs
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.csproj.CoreCompileInputs.cache
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.dll
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.pdb
+C:\Users\faridkhm\Desktop\Homework-ConsoleApp\MarketApp\task\obj\Debug\netcoreapp3.1\task.genruntimeconfig.cache
