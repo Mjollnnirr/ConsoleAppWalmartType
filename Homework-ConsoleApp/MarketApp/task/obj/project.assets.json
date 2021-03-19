@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\faridkhm\\Desktop\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
+      "projectUniqueName": "C:\\Users\\faridkhm\\Desktop\\gggg\\ConsoleAppStore\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
       "projectName": "task",
-      "projectPath": "C:\\Users\\faridkhm\\Desktop\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
+      "projectPath": "C:\\Users\\faridkhm\\Desktop\\gggg\\ConsoleAppStore\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
       "packagesPath": "C:\\Users\\faridkhm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\faridkhm\\Desktop\\Homework-ConsoleApp\\MarketApp\\task\\obj\\",
+      "outputPath": "C:\\Users\\faridkhm\\Desktop\\gggg\\ConsoleAppStore\\Homework-ConsoleApp\\MarketApp\\task\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

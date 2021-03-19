@@ -13,7 +13,7 @@ namespace task.Models
         XL,
         XXL
     }
-    class Clothing : Product
+    class Clothing : Product, IAccessibility
     {
         public Sizes Size { get; set; }
         public double PricePerCount { get; set; }
@@ -25,6 +25,15 @@ namespace task.Models
             PricePerCount = priceOfProduct;
             ProductCount = countOfProduct;
             Size = size;
+        }
+
+        public bool Availablty()
+        {
+            if (ProductCount > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
