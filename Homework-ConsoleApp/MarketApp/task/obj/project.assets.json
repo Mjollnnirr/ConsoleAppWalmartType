@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\faridkhm\\.nuget\\packages\\": {},
+    "C:\\Users\\mamed\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\faridkhm\\Desktop\\gggg\\ConsoleAppStore\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
+      "projectUniqueName": "C:\\Users\\mamed\\Desktop\\ConsoleApp\\ConsoleAppWalmartType\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
       "projectName": "task",
-      "projectPath": "C:\\Users\\faridkhm\\Desktop\\gggg\\ConsoleAppStore\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
-      "packagesPath": "C:\\Users\\faridkhm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\faridkhm\\Desktop\\gggg\\ConsoleAppStore\\Homework-ConsoleApp\\MarketApp\\task\\obj\\",
+      "projectPath": "C:\\Users\\mamed\\Desktop\\ConsoleApp\\ConsoleAppWalmartType\\Homework-ConsoleApp\\MarketApp\\task\\task.csproj",
+      "packagesPath": "C:\\Users\\mamed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mamed\\Desktop\\ConsoleApp\\ConsoleAppWalmartType\\Homework-ConsoleApp\\MarketApp\\task\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\faridkhm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
