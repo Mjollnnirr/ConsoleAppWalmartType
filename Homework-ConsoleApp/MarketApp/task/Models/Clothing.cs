@@ -113,5 +113,75 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static Sizes ChooseSize(ref Sizes size)
+        {
+            Sizes:
+            Console.WriteLine("Sizes: ");
+            Console.WriteLine($"Press 1 for: {Sizes.XS}" +
+                $"\nPress 2 for: {Sizes.S}" +
+                $"\nPress 3 for: {Sizes.M}" +
+                $"\nPress 4 for: {Sizes.L}" +
+                $"\nPress 5 for: {Sizes.XL}" +
+                $"\nPress 6 for: {Sizes.XXL}");
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    size = Sizes.XS;
+                    break;
+                case "2":
+                    size = Sizes.S;
+                    break;
+                case "3":
+                    size = Sizes.M;
+                    break;
+                case "4":
+                    size = Sizes.L;
+                    break;
+                case "5":
+                    size = Sizes.XL;
+                    break;
+                case "6":
+                    size = Sizes.XXL;
+                    break;
+                default:
+                    Console.WriteLine("Wrong choise!\nTry again!");
+                    goto Sizes;
+            }
+            return size;
+        }
+        public static Clothing AddItem()
+        {
+            Console.Write("Add clothing name: ");
+            string name = Console.ReadLine();
+            double price;
+        Price:
+            try
+            {
+                Console.Write("Add price: ");
+                price = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Price;
+            }
+            int count;
+        Count:
+            try
+            {
+                Console.Write("Add count of item: ");
+                count = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid count!\nTry again!");
+                goto Count;
+            }
+            Sizes size = Sizes.S;
+            Clothing.ChooseSize(ref size);
+            Clothing clothing = new Clothing(name, price, count, size);
+            return clothing;
+        }
     }
 }
