@@ -88,5 +88,22 @@ namespace task.Models
             VideoRam = videoRam;
             IteratorList.Add(this);
         }
+
+        public override string ToString()
+        {
+            if (!IsLabtop)
+            {
+                return $"\n++++++++++++++++++++++++\nComputer properities\n  Ram: {Ram} GB\n  VideoRam: {VideoRam} GB\n  CPU: {Cpu}\nPrice: {PricePerCount}$\n++++++++++++++++++++++++\n";
+            }
+            return $"\n++++++++++++++++++++++++\nLabtop properities\n  Ram: {Ram} GB\n  VideoRam: {VideoRam} GB\n  CPU: {Cpu}\nPrice: {PricePerCount}$\n++++++++++++++++++++++++\n";
+        }
+
+        public static void ForEachItem()
+        {
+            foreach (Computers item in IteratorList)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }

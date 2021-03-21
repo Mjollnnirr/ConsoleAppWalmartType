@@ -10,9 +10,9 @@ namespace task
         {
             List<Product> listOFitems = new List<Product>();
             Clothing clothing1 = new Clothing("clothing1", 30.5, 4, Sizes.XL);
-            Clothing clothing2 = new Clothing("clothing2", 30.5, 4, Sizes.XL);
-            Clothing clothing3 = new Clothing("clothing3", 30.5, 4, Sizes.XL);
-            Clothing clothing4 = new Clothing("clothing4", 30.5, 4, Sizes.XL);
+            Clothing clothing2 = new Clothing("clothing2", 32.5, 4, Sizes.XL);
+            Clothing clothing3 = new Clothing("clothing3", 33.5, 4, Sizes.XL);
+            Clothing clothing4 = new Clothing("clothing4", 34.5, 4, Sizes.XL);
             Computers computer1 = new Computers(200, 1, false, CPU.CoreI9, 32, 12);
             Computers computer2 = new Computers(200, 1, false, CPU.CoreI7, 16, 2);
             Computers computer3 = new Computers(200, 1, false, CPU.CoreI3, 8, 2);
@@ -53,65 +53,127 @@ namespace task
             listOFitems.Add(phones3);
 
 
+            //foreach (Clothing item in Clothing.IteratorList)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+            //foreach (Computers item in Computers.IteratorList)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+            //foreach (Games item in Games.IteratorList)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+            //foreach (GamingConsole item in GamingConsole.IteratorList)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+            //foreach (Grocery item in Grocery.IteratorList)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+            //foreach (Phones item in Phones.IteratorList)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
             //Clothing.ItemList.Add(c2);
 
             #region Welcoming
-            //Console.WriteLine(@"                ▄█     █▄     ▄████████  ▄█        ▄████████  ▄██████▄    ▄▄▄▄███▄▄▄▄      ▄████████ 
-            //    ███     ███   ███    ███ ███       ███    ███ ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███ 
-            //    ███     ███   ███    █▀  ███       ███    █▀  ███    ███ ███   ███   ███   ███    █▀  
-            //    ███     ███  ▄███▄▄▄     ███       ███        ███    ███ ███   ███   ███  ▄███▄▄▄     
-            //    ███     ███ ▀▀███▀▀▀     ███       ███        ███    ███ ███   ███   ███ ▀▀███▀▀▀     
-            //    ███     ███   ███    █▄  ███       ███    █▄  ███    ███ ███   ███   ███   ███    █▄  
-            //    ███ ▄█▄ ███   ███    ███ ███▌    ▄ ███    ███ ███    ███ ███   ███   ███   ███    ███ 
-            //    ▀███▀███▀    ██████████ █████▄▄██ ████████▀   ▀██████▀   ▀█   ███   █▀    ██████████ 
-            //             ▀                                                            ");
-            //TryAgain:
-            //Console.WriteLine("======================================" +
-            //    "\nPress '1' for product menu" +
-            //    "\n======================================" +
-            //    "\nPress '2' for add product" +
-            //    "\n======================================" +
-            //    "\nPress '3' for remove product" +
-            //    "\n======================================" +
-            //    "\nPress '4' for sell product" +
-            //    "\n======================================" +
-            //    "\nPress '5' for exit" +
-            //    "\n======================================");
+            Console.WriteLine(@"                ▄█     █▄     ▄████████  ▄█        ▄████████  ▄██████▄    ▄▄▄▄███▄▄▄▄      ▄████████ 
+                ███     ███   ███    ███ ███       ███    ███ ███    ███ ▄██▀▀▀███▀▀▀██▄   ███    ███ 
+                ███     ███   ███    █▀  ███       ███    █▀  ███    ███ ███   ███   ███   ███    █▀  
+                ███     ███  ▄███▄▄▄     ███       ███        ███    ███ ███   ███   ███  ▄███▄▄▄     
+                ███     ███ ▀▀███▀▀▀     ███       ███        ███    ███ ███   ███   ███ ▀▀███▀▀▀     
+                ███     ███   ███    █▄  ███       ███    █▄  ███    ███ ███   ███   ███   ███    █▄  
+                ███ ▄█▄ ███   ███    ███ ███▌    ▄ ███    ███ ███    ███ ███   ███   ███   ███    ███ 
+                ▀███▀███▀    ██████████ █████▄▄██ ████████▀   ▀██████▀   ▀█   ███   █▀    ██████████ 
+                         ▀                                                            ");
+            TryAgain:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for product menu" +
+                "\n======================================" +
+                "\nPress '2' for add product" +
+                "\n======================================" +
+                "\nPress '3' for remove product" +
+                "\n======================================" +
+                "\nPress '4' for sell product" +
+                "\n======================================" +
+                "\nPress '5' for exit" +
+                "\n======================================");
 
-            //Console.Write("\n\n" +
-            //    "\n--------------------------------------" +
-            //    "\nYour choise: ");
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
             #endregion
             #region Choosing Part
-            //string choise = Console.ReadLine();
-            //switch (choise)
-            //{
-            //    case "1":
-            //        break;
-            //    case "2":
-            //        break;
-            //    case "3":
-            //        break;
-            //    case "4":
-            //        break;
-            //    case "5":
-            //        break;
-            //    default:
-            //        Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
-            //            "\nWrong Choise! Try again!!!" +
-            //            "\n++++++++++++++++++++++++++++++++++++++\n\n");
-            //        //string aa = "--------------------------------------";
-            //        //Console.WriteLine(aa.Length);
-            //        goto TryAgain;
-            //}
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    //string aa = "--------------------------------------";
+                    //Console.WriteLine(aa.Length);
+                    goto TryAgain;
+            }
             #endregion
         }
 
-
-
         public static void ItemList()
         {
-            
+        MainTrying:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for Clothing store" +
+                "\n======================================" +
+                "\nPress '2' for Electronic" +
+                "\n======================================" +
+                "\nPress '3' for Grocery store" +
+                "\n======================================" +
+                "\nPress '4' for go back" +
+                "\n======================================");
+
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
+
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    Clothing.ForEachItem();
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    goto MainTrying;
+
+            }
         }
     }
 }

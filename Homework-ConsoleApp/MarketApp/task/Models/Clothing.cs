@@ -78,6 +78,7 @@ namespace task.Models
                 }
             } 
         }
+
         static Clothing()
         {
             IteratorList = new List<Clothing>();
@@ -90,6 +91,7 @@ namespace task.Models
             Size = size;
             IteratorList.Add(this);
         }
+
         public bool Availablty()
         {
             if (ProductCount > 0)
@@ -97,6 +99,19 @@ namespace task.Models
                 return true;
             }
             return false;
+        }
+
+        public override string ToString()
+        {
+            return $"\n++++++++++++++++++++++++\nItem name: {ItemName}\nItem size: {Size}\nItem price: {PricePerCount}$\nItem left: {ProductCount}\n++++++++++++++++++++++++\n";
+        }
+
+        public static void ForEachItem()
+        {
+            foreach (Clothing item in IteratorList)
+            {
+                Console.WriteLine(item.ToString());
+            }
         }
     }
 }

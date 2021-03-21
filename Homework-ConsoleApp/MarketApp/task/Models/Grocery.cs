@@ -88,5 +88,16 @@ namespace task.Models
             }
             return false;
         }
+        public override string ToString()
+        {
+            return $"\n++++++++++++++++++++++++\nItem name: {ItemName}\nItem price: {PricePerCount}$\nItem left: {ProductCount}\n++++++++++++++++++++++++\n";
+        }
+        public static void ForEachItem()
+        {
+            foreach (Grocery item in IteratorList)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }

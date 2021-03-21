@@ -19,5 +19,16 @@ namespace task.Models
             Playable = playable;
             IteratorList.Add(this);
         }
+        public override string ToString()
+        {
+            return $"\n++++++++++++++++++++++++\nGame name: {GameName}\nAvalible on: {Playable}\nGame price: {PricePerCount}$\nGame left: {ProductCount}\n++++++++++++++++++++++++\n";
+        }
+        public static void ForEachItem()
+        {
+            foreach (Games item in IteratorList)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }

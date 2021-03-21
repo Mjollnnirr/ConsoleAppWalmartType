@@ -46,5 +46,17 @@ namespace task.Models
             Model = model;
             IteratorList.Add(this);
         }
+
+        public override string ToString()
+        {
+            return $"\n++++++++++++++++++++++++\nConsole name: {Model}\nConsole price: {PricePerCount}$\nConsole left: {ProductCount}\n++++++++++++++++++++++++\n";
+        }
+        public static void ForEachItem()
+        {
+            foreach (GamingConsole item in IteratorList)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }

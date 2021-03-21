@@ -60,5 +60,16 @@ namespace task.Models
             Storage = storage;
             IteratorList.Add(this);
         }
+        public override string ToString()
+        {
+            return $"\n++++++++++++++++++++++++\nPhone brand: {Brand}\nPhone model: {Model}\nPhone storage: {Storage} GB\nPhone price: {PricePerCount}$\nItem left: {ProductCount}\n++++++++++++++++++++++++\n";
+        }
+        public static void ForEachItem()
+        {
+            foreach (Phones item in IteratorList)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }
