@@ -81,5 +81,47 @@ namespace task.Models
             PricePerCount = price;
             ProductCount = productCount;
         }
+        public static void Classes()
+        {
+            MainTrying:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for Computers" +
+                "\n======================================" +
+                "\nPress '2' for Games" +
+                "\n======================================" +
+                "\nPress '3' for Gaming Console" +
+                "\n======================================" +
+                "\nPress '4' for Phones" +
+                "\n======================================" +
+                "\nPress '5' for go back" +
+                "\n======================================");
+
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
+
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    goto MainTrying;
+
+            }
+        }
     }
 }
