@@ -104,14 +104,16 @@ namespace task.Models
             switch (choise)
             {
                 case "1":
-                    
+                    Computers.ForEachItem();
                     break;
                 case "2":
-
+                    Games.ForEachItem();
                     break;
                 case "3":
+                    GamingConsole.ForEachItem();
                     break;
                 case "4":
+                    Phones.ForEachItem();
                     break;
                 case "5":
                     break;

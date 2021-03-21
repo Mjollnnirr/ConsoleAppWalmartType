@@ -117,6 +117,12 @@ namespace task
             switch (choise)
             {
                 case "1":
+                    bool isGoingBack = false;
+                    ItemList(ref isGoingBack);
+                    if (isGoingBack == true)
+                    {
+                        goto TryAgain;
+                    }
                     break;
                 case "2":
                     break;
@@ -137,7 +143,7 @@ namespace task
             #endregion
         }
 
-        public static void ItemList()
+        public static void ItemList(ref bool goingBack)
         {
         MainTrying:
             Console.WriteLine("======================================" +
@@ -161,11 +167,13 @@ namespace task
                     Clothing.ForEachItem();
                     break;
                 case "2":
-
+                    Electronic.Classes();
                     break;
                 case "3":
+                    Grocery.ForEachItem();
                     break;
                 case "4":
+                    goingBack = true;
                     break;
                 default:
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
