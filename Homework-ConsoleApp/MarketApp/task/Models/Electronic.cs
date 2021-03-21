@@ -125,5 +125,45 @@ namespace task.Models
 
             }
         }
+        public static int Classes(out int result)
+        {
+        MainTrying:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for Computers" +
+                "\n======================================" +
+                "\nPress '2' for Games" +
+                "\n======================================" +
+                "\nPress '3' for Gaming Console" +
+                "\n======================================" +
+                "\nPress '4' for Phones" +
+                "\n======================================" +
+                "\nPress '5' for go back" +
+                "\n======================================");
+
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
+
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    return result = 1;
+                case "2":
+                    return result = 2;
+                case "3":
+                    return result = 3;
+                case "4":
+                    return result = 4;
+                case "5":
+                    return result = 0;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    goto MainTrying;
+
+            }
+        }
     }
 }

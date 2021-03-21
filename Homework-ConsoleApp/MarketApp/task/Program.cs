@@ -232,6 +232,18 @@ namespace task
                         goto AddMore;
                     }
                 case "2":
+                    int result;
+                    Electronic.Classes(out result);
+                    switch (result)
+                    {
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 0:
+                            break;
+                        
+                    }
                     break;
                 case "3":
                     break;
