@@ -105,5 +105,34 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static CPU ChooseCpu(ref CPU cpu)
+        {
+        CPU:
+            Console.WriteLine("CPU: ");
+            Console.WriteLine($"Press 1 for: {CPU.CoreI3}" +
+                $"\nPress 2 for: {CPU.CoreI5}" +
+                $"\nPress 3 for: {CPU.CoreI7}" +
+                $"\nPress 4 for: {CPU.CoreI9}");
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    cpu = CPU.CoreI3;
+                    break;
+                case "2":
+                    cpu = CPU.CoreI5;
+                    break;
+                case "3":
+                    cpu = CPU.CoreI7;
+                    break;
+                case "4":
+                    cpu = CPU.CoreI9;
+                    break;
+                default:
+                    Console.WriteLine("Wrong choise!\nTry again!");
+                    goto CPU;
+            }
+            return cpu;
+        }
     }
 }
