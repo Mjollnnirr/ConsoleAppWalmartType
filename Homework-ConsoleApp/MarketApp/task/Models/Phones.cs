@@ -111,9 +111,10 @@ namespace task.Models
             Console.Write("Add model: ");
             string model = Console.ReadLine().Trim();
             int storage;
-        Storage:
+            Storage:
             try
             {
+                Console.Write("Add storage: ");
                 storage = Convert.ToInt32(Console.ReadLine());
             }
             catch (Exception)
@@ -122,9 +123,10 @@ namespace task.Models
                 goto Storage;
             }
             double price;
-        Price:
+            Price:
             try
             {
+                Console.Write("Add price: ");
                 price = Convert.ToDouble(Console.ReadLine());
             }
             catch (Exception)
@@ -133,9 +135,10 @@ namespace task.Models
                 goto Price;
             }
             int count;
-        Count:
+            Count:
             try
             {
+                Console.Write("Add count: ");
                 count = Convert.ToInt32(Console.ReadLine());
             }
             catch (Exception)

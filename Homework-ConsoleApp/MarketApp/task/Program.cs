@@ -249,11 +249,11 @@ namespace task
                             Phones.AddItem();
                             break;
                         case 0:
-                            break;
-                        
+                            goto MainTrying;
                     }
-                    break;
+                    goto AddMore;
                 case "3":
+                    
                     break;
                 case "4":
                     goingBack = true;

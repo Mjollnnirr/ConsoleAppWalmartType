@@ -99,5 +99,36 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static Grocery AddItem()
+        {
+            Console.Write("Add item name: ");
+            string name = Console.ReadLine().Trim();
+            double price;
+            Price:
+            try
+            {
+                Console.Write("Add price: ");
+                price = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Price;
+            }
+            int count;
+            Count:
+            try
+            {
+                Console.Write("Add count: ");
+                count = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid count!\nTry again!");
+                goto Count;
+            }
+            Grocery grocery = new Grocery(name, price, count);
+            return grocery;
+        }
     }
 }

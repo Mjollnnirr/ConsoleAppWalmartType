@@ -96,9 +96,10 @@ namespace task.Models
             Models model;
             ChooseModel(out model);
             double price;
-        Price:
+            Price:
             try
             {
+                Console.Write("Add price: ");
                 price = Convert.ToDouble(Console.ReadLine());
             }
             catch (Exception)
@@ -107,9 +108,10 @@ namespace task.Models
                 goto Price;
             }
             int count;
-        Count:
+            Count:
             try
             {
+                Console.Write("Add count: ");
                 count = Convert.ToInt32(Console.ReadLine());
             }
             catch (Exception)

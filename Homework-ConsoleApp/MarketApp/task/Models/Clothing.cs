@@ -155,7 +155,7 @@ namespace task.Models
             Console.Write("Add clothing name: ");
             string name = Console.ReadLine();
             double price;
-        Price:
+            Price:
             try
             {
                 Console.Write("Add price: ");
@@ -167,7 +167,7 @@ namespace task.Models
                 goto Price;
             }
             int count;
-        Count:
+            Count:
             try
             {
                 Console.Write("Add count of item: ");

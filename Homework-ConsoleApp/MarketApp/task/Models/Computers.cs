@@ -154,7 +154,7 @@ namespace task.Models
                 goto Labtop;
             }
             int ram;
-        Ram:
+            Ram:
             try
             {
                 Console.Write("Add Ram: ");
@@ -166,7 +166,7 @@ namespace task.Models
                 goto Ram;
             }
             int videoRam;
-        VideoRam:
+            VideoRam:
             try
             {
                 Console.Write("Add VideoRam: ");
@@ -180,7 +180,7 @@ namespace task.Models
             CPU cpu;
             Computers.ChooseCpu(out cpu);
             double price;
-        Price:
+            Price:
             try
             {
                 Console.Write("Add price: ");
@@ -192,7 +192,7 @@ namespace task.Models
                 goto Price;
             }
             int count;
-        Count:
+            Count:
             try
             {
                 Console.Write("Add count: ");

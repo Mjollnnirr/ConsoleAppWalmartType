@@ -37,7 +37,7 @@ namespace task.Models
             Models model;
             GamingConsole.ChooseModel(out model);
             double price;
-        Price:
+            Price:
             try
             {
                 Console.Write("Enter the price: ");
@@ -49,9 +49,10 @@ namespace task.Models
                 goto Price;
             }
             int count;
-        Count:
+            Count:
             try
             {
+                Console.WriteLine("Add count: ");
                 count = Convert.ToInt32(Console.ReadLine());
             }
             catch (Exception)
