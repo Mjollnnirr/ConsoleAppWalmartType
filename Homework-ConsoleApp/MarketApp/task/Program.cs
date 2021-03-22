@@ -253,7 +253,7 @@ namespace task
                     }
                     goto AddMore;
                 case "3":
-                    
+                    Clothing.AddItem();
                     break;
                 case "4":
                     goingBack = true;
