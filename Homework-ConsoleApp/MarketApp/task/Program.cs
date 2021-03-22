@@ -237,52 +237,25 @@ namespace task
                     switch (result)
                     {
                         case 1:
-                            bool isLabtop;
-                            Labtop:
-                            Console.WriteLine("1: Labtop\n2: PC");
-                            string Labtop = Console.ReadLine();
-                            if (Labtop == "1")
-                            {
-                                isLabtop = true;
-                            }
-                            else if (Labtop == "2")
-                            {
-                                isLabtop = false;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Wrong choise!\nTry again!");
-                                goto Labtop;
-                            }
-                            int ram;
-                            Ram:
-                            try
-                            {
-                                Console.Write("Add Ram: ");
-                                ram = Convert.ToInt32(Console.ReadLine());
-                            }
-                            catch (Exception)
-                            {
-                                Console.WriteLine("Invalid number!\nTry again!");
-                                goto Ram;
-                            }
-                            int videoRam;
-                            VideoRam:
-                            try
-                            {
-                                Console.Write("Add VideoRam: ");
-                                videoRam = Convert.ToInt32(Console.ReadLine());
-                            }
-                            catch (Exception)
-                            {
-                                Console.WriteLine("Invalid number!\nTry again!");
-                                goto VideoRam;
-                            }
-                            CPU cpu;
-                            Computers computer = new Computers();
+                            Computers.AddItem();
                             break;
                         case 2:
-                            //Games games = new Games();
+                            Console.Write("Enter name of the game: ");
+                            string name = Console.ReadLine().Trim();
+                            double price;
+                            Price:
+                            try
+                            {
+                                Console.Write("Enter the price: ");
+                                price = Convert.ToDouble(Console.ReadLine());
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Invalid price!\nTry again!");
+                                goto Price;
+                            }
+
+                            Games games = new Games();
                             break;
                         case 3:
                             //GamingConsole gamingConsole = new GamingConsole();

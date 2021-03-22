@@ -58,5 +58,39 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static Models ChooseModel(out Models model)
+        {
+
+        Models:
+            Console.WriteLine("Working on: ");
+            Console.WriteLine($"Press 1 for: {Models.Playstation5}" +
+                $"\nPress 2 for: {Models.Playstation4}" +
+                $"\nPress 3 for: {Models.NintendoSwitch}" +
+                $"\nPress 4 for: {Models.XboxSeriesX}" +
+                $"\npress 5 for: {Models.XboxSeriesS}");
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    model = Models.Playstation5;
+                    break;
+                case "2":
+                    model = Models.Playstation4;
+                    break;
+                case "3":
+                    model = Models.NintendoSwitch;
+                    break;
+                case "4":
+                    model = Models.XboxSeriesX;
+                    break;
+                case "5":
+                    model = Models.XboxSeriesS;
+                    break;
+                default:
+                    Console.WriteLine("Wrong choise!\nTry again!");
+                    goto Models;
+            }
+            return model;
+        }
     }
 }
