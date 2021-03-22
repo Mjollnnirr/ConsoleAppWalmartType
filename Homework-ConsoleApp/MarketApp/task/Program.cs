@@ -246,8 +246,7 @@ namespace task
                             GamingConsole.AddItem();
                             break;
                         case 4:
-                            Brands brand;
-                            Phones phones = new Phones();
+                            Phones.AddItem();
                             break;
                         case 0:
                             break;

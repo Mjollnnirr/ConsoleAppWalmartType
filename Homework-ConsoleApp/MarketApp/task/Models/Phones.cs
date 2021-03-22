@@ -104,5 +104,47 @@ namespace task.Models
             }
             return brand;
         }
+        public static Phones AddItem()
+        {
+            Brands brand;
+            ChooseBrand(out brand);
+            Console.Write("Add model: ");
+            string model = Console.ReadLine().Trim();
+            int storage;
+        Storage:
+            try
+            {
+                storage = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid storage!\nTry again!");
+                goto Storage;
+            }
+            double price;
+        Price:
+            try
+            {
+                price = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Price;
+            }
+            int count;
+        Count:
+            try
+            {
+                count = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid count!\nTry again!");
+                goto Count;
+            }
+            Phones phones = new Phones(price, count, brand, model, storage);
+            return phones;
+        }
     }
 }
