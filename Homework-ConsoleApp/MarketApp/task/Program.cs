@@ -133,6 +133,8 @@ namespace task
                     }
                     break;
                 case "3":
+                    bool isGoingBack3 = false;
+                    RemoveProduct(ref isGoingBack3, 0);
                     break;
                 case "4":
                     break;
@@ -177,6 +179,47 @@ namespace task
                     break;
                 case "3":
                     Grocery.ForEachItem();
+                    break;
+                case "4":
+                    goingBack = true;
+                    break;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    goto MainTrying;
+
+            }
+        }
+
+        public static void RemoveProduct(ref bool goingBack, int id)
+        {
+        MainTrying:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for Clothing store" +
+                "\n======================================" +
+                "\nPress '2' for Electronic" +
+                "\n======================================" +
+                "\nPress '3' for Grocery store" +
+                "\n======================================" +
+                "\nPress '4' for go back" +
+                "\n======================================");
+
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
+
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    Clothing.Remove(id);
+                    break;
+                case "2":
+                    Electronic.Classes(id);
+                    break;
+                case "3":
+                    Grocery.Remove(id);
                     break;
                 case "4":
                     goingBack = true;
@@ -254,6 +297,47 @@ namespace task
                     goto AddMore;
                 case "3":
                     Clothing.AddItem();
+                    break;
+                case "4":
+                    goingBack = true;
+                    break;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    goto MainTrying;
+
+            }
+        }
+
+        public static void SellProduct(bool goingBack)
+        {
+        MainTrying:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for Clothing store" +
+                "\n======================================" +
+                "\nPress '2' for Electronic" +
+                "\n======================================" +
+                "\nPress '3' for Grocery store" +
+                "\n======================================" +
+                "\nPress '4' for go back" +
+                "\n======================================");
+
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
+
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    Clothing.ForEachItem();
+                    break;
+                case "2":
+                    Electronic.Classes();
+                    break;
+                case "3":
+                    Grocery.ForEachItem();
                     break;
                 case "4":
                     goingBack = true;

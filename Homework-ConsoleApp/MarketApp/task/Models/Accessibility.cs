@@ -6,6 +6,6 @@ namespace task.Models
 {
     interface IAccessibility
     {
-        bool Availablty();
+        bool Availablty(int countOfChoise);
     }
 }

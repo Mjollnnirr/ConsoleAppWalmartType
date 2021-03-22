@@ -30,6 +30,26 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static void Remove(int id)
+        {
+            foreach (Games item in IteratorList)
+            {
+                Console.WriteLine($"ID: {item.Id} - " + item.ToString());
+            }
+            Console.WriteLine("=================================================");
+        ID:
+            try
+            {
+                Console.Write("Enter the ID of product that you want to remove: ");
+                id = Convert.ToInt32(Console.ReadLine());
+                IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid ID!\nTry again!");
+                goto ID;
+            }
+        }
         public static Games AddItem()
         {
             Console.Write("Enter name of the game: ");

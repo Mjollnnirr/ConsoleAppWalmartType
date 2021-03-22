@@ -7,72 +7,10 @@ namespace task.Models
     class Grocery : Product, IAccessibility
     {
         public static List<Grocery> IteratorList { get; protected set; }
-        private double _pricePerCount;
-        public double PricePerCount 
-        {
-            get 
-            {
-                return _pricePerCount;
-            }
-            set 
-            {
-                TryAgain:
-                if (value > 0)
-                {
-                    _pricePerCount = value;
-                }
-                else
-                {
-                    InvalidNumber:
-                    Console.WriteLine("Invalid ram Input!\nTry Again!");
-                    try
-                    {
-                        value = Convert.ToDouble(Console.ReadLine());
-                        goto TryAgain;
-                    }
-                    catch (Exception)
-                    {
-                        goto InvalidNumber;
-                    }
-                }
-            }
-        }
         public override string ItemName { get; protected set; }
-        private int _productCount = 0;
-        public int ProductCount
-        {
-            get 
-            {
-                return _productCount;
-            }
-            set
-            {
-                TryAgain:
-                if (value > 0)
-                {
-                    _productCount = value;
-                }
-                else
-                {
-                    InvalidNumber:
-                    Console.WriteLine("Invalid ram Input!\nTry Again!");
-                    try
-                    {
-                        value = Convert.ToInt32(Console.ReadLine());
-                        goto TryAgain;
-                    }
-                    catch (Exception)
-                    {
-                        goto InvalidNumber;
-                    }
-                }
-            }
-        }
-        public Grocery(string name, double priceOfProduct, int countOfProduct) : base()
+        public Grocery(string name, double priceOfProduct, int countOfProduct) : base(priceOfProduct, countOfProduct)
         {
             ItemName = name;
-            PricePerCount = priceOfProduct;
-            ProductCount = countOfProduct;
             IteratorList.Add(this);
         }
         static Grocery()
@@ -80,9 +18,9 @@ namespace task.Models
             IteratorList = new List<Grocery>();
         }
 
-        public bool Availablty()
+        public bool Availablty(int CountOfChoise)
         {
-            if (ProductCount > 0)
+            if (ProductCount * CountOfChoise > 0)
             {
                 return true;
             }
@@ -97,6 +35,27 @@ namespace task.Models
             foreach (Grocery item in IteratorList)
             {
                 Console.WriteLine(item.ToString());
+            }
+        }
+
+        public static void Remove(int id)
+        {
+            foreach (Grocery item in IteratorList)
+            {
+                Console.WriteLine($"ID: {item.Id} - " + item.ToString());
+            }
+            Console.WriteLine("=================================================");
+        ID:
+            try
+            {
+                Console.Write("Enter the ID of product that you want to remove: ");
+                id = Convert.ToInt32(Console.ReadLine());
+                IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid ID!\nTry again!");
+                goto ID;
             }
         }
         public static Grocery AddItem()

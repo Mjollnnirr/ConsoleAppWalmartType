@@ -17,84 +17,22 @@ namespace task.Models
     {
         public static List<Clothing> IteratorList { get; protected set; }
         public Sizes Size { get; set; }
-        private double _pricePerCount;
-        public double PricePerCount 
-        { 
-            get 
-            {
-                return _pricePerCount;
-            }
-            set
-            {
-                TryAgain:
-                if (value > 0)
-                {
-                    _pricePerCount = value;
-                }
-                else
-                {
-                InvalidNumber:
-                    Console.WriteLine("Invalid ram Input!\nTry Again!");
-                    try
-                    {
-                        value = Convert.ToDouble(Console.ReadLine());
-                        goto TryAgain;
-                    }
-                    catch (Exception)
-                    {
-                        goto InvalidNumber;
-                    }
-                }
-            }
-        }
         public override string ItemName { get; protected set; }
-        private int _productCount = 0;
-        public int ProductCount 
-        {
-            get 
-            {
-                return _productCount;
-            }
-            set 
-            {
-                TryAgain:
-                if (value > 0)
-                {
-                    _productCount = value;
-                }
-                else
-                {
-                    InvalidNumber:
-                    Console.WriteLine("Invalid ram Input!\nTry Again!");
-                    try
-                    {
-                        value = Convert.ToInt32(Console.ReadLine());
-                        goto TryAgain;
-                    }
-                    catch (Exception)
-                    {
-                        goto InvalidNumber;
-                    }
-                }
-            } 
-        }
 
         static Clothing()
         {
             IteratorList = new List<Clothing>();
         }
-        public Clothing(string name, double priceOfProduct, int countOfProduct, Sizes size) : base()
+        public Clothing(string name, double priceOfProduct, int countOfProduct, Sizes size) : base(priceOfProduct, countOfProduct)
         {
             ItemName = name;
-            PricePerCount = priceOfProduct;
-            ProductCount = countOfProduct;
             Size = size;
             IteratorList.Add(this);
         }
 
-        public bool Availablty()
+        public bool Availablty(int CountOfChoise)
         {
-            if (ProductCount > 0)
+            if (ProductCount * CountOfChoise > 0)
             {
                 return true;
             }
@@ -182,6 +120,88 @@ namespace task.Models
             Clothing.ChooseSize(ref size);
             Clothing clothing = new Clothing(name, price, count, size);
             return clothing;
+        }
+        public static void Remove(int id)
+        {
+            foreach (Clothing item in IteratorList)
+            {
+                Console.WriteLine($"ID: {item.Id} - " + item.ToString());
+            }
+            Console.WriteLine("=================================================");
+            ID:
+            try
+            {
+                Console.Write("Enter the ID of product that you want to remove: ");
+                id = Convert.ToInt32(Console.ReadLine());
+                IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid ID!\nTry again!");
+                goto ID;
+            }
+        }
+        public static void Sell(ref bool isAddingMore, List<Product> cartList)
+        {
+            double finalPay = 0;
+            foreach (Clothing item in IteratorList)
+            {
+                Console.WriteLine($"ID: {item.Id} - " + item.ToString());
+            }
+            Console.WriteLine("=================================================");
+            int id;
+            ID:
+            try
+            {
+                Console.Write("Enter the ID of product that you want to add to cart: ");
+                id = Convert.ToInt32(Console.ReadLine());
+                int count;
+                Count:
+                Console.Write("Add count of item: ");
+                try
+                {
+                    count = Convert.ToInt32(Console.ReadLine());
+                    if (!IteratorList.Find(item => item.Id == id).Availablty(count))
+                    {
+                        Console.WriteLine("There is not enough item!\nPlease add less!");
+                        goto Count;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input!\nTry Again!");
+                    goto Count;
+                }
+                for (int i = 0; i < count; i++)
+                {
+                    cartList.Add(IteratorList.Find(item => item.Id == id));
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid ID!\nTry again!");
+                goto ID;
+            }
+            Console.WriteLine("=================================================");
+            WrongAnswer:
+            Console.Write("Item succesfully added to cart!\nDo you want to add more?\n'Y'/'N': ");
+            string answer = Console.ReadLine().Trim().ToUpper();
+            switch (answer)
+            {
+                case "Y":
+                    isAddingMore = true;
+                    break;
+                case "N":
+                    foreach (Product item in cartList)
+                    {
+                        finalPay += item.PricePerCount;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("=================================================");
+                    Console.WriteLine("Wrong answer!\nTry again!");
+                    goto WrongAnswer;
+            }
         }
     }
 }
