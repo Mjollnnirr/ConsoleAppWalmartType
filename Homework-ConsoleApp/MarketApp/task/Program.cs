@@ -240,13 +240,14 @@ namespace task
                             Computers.AddItem();
                             break;
                         case 2:
-                            
+                            Games.AddItem();
                             break;
                         case 3:
-                            //GamingConsole gamingConsole = new GamingConsole();
+                            GamingConsole.AddItem();
                             break;
                         case 4:
-                            //Phones phones = new Phones();
+                            Brands brand;
+                            Phones phones = new Phones();
                             break;
                         case 0:
                             break;

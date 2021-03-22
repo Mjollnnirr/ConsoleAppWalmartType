@@ -71,5 +71,38 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static Brands ChooseBrand(out Brands brand)
+        {
+        Brands:
+            Console.WriteLine("Choose brand: ");
+            Console.WriteLine($"Press 1 for: {Brands.iPhone}" +
+                $"\nPress 2 for: {Brands.Samsung}" +
+                $"\nPress 3 for: {Brands.LG}" +
+                $"\nPress 4 for: {Brands.Huawei}" +
+                $"\npress 5 for: {Brands.BlackBerry}");
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    brand = Brands.iPhone;
+                    break;
+                case "2":
+                    brand = Brands.Samsung;
+                    break;
+                case "3":
+                    brand = Brands.LG;
+                    break;
+                case "4":
+                    brand = Brands.Huawei;
+                    break;
+                case "5":
+                    brand = Brands.BlackBerry;
+                    break;
+                default:
+                    Console.WriteLine("Wrong choise!\nTry again!");
+                    goto Brands;
+            }
+            return brand;
+        }
     }
 }

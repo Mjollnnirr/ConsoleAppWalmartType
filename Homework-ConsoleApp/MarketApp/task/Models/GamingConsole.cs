@@ -91,5 +91,34 @@ namespace task.Models
             }
             return model;
         }
+        public static GamingConsole AddItem()
+        {
+            Models model;
+            ChooseModel(out model);
+            double price;
+        Price:
+            try
+            {
+                price = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Price;
+            }
+            int count;
+        Count:
+            try
+            {
+                count = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Count;
+            }
+            GamingConsole gamingConsole = new GamingConsole(model, price, count);
+            return gamingConsole;
+        }
     }
 }
