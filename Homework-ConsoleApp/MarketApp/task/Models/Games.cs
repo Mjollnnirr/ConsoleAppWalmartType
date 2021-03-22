@@ -30,5 +30,37 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        public static Games AddItem()
+        {
+            Console.Write("Enter name of the game: ");
+            string name = Console.ReadLine().Trim();
+            Models model;
+            GamingConsole.ChooseModel(out model);
+            double price;
+        Price:
+            try
+            {
+                Console.Write("Enter the price: ");
+                price = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Price;
+            }
+            int count;
+        Count:
+            try
+            {
+                count = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid price!\nTry again!");
+                goto Count;
+            }
+            Games game = new Games(name, price, count, model);
+            return game;
+        }
     }
 }

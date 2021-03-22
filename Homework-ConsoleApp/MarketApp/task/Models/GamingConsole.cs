@@ -60,8 +60,7 @@ namespace task.Models
         }
         public static Models ChooseModel(out Models model)
         {
-
-        Models:
+            Models:
             Console.WriteLine("Working on: ");
             Console.WriteLine($"Press 1 for: {Models.Playstation5}" +
                 $"\nPress 2 for: {Models.Playstation4}" +

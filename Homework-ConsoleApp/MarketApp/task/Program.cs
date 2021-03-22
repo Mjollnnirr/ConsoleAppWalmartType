@@ -240,22 +240,7 @@ namespace task
                             Computers.AddItem();
                             break;
                         case 2:
-                            Console.Write("Enter name of the game: ");
-                            string name = Console.ReadLine().Trim();
-                            double price;
-                            Price:
-                            try
-                            {
-                                Console.Write("Enter the price: ");
-                                price = Convert.ToDouble(Console.ReadLine());
-                            }
-                            catch (Exception)
-                            {
-                                Console.WriteLine("Invalid price!\nTry again!");
-                                goto Price;
-                            }
-
-                            Games games = new Games();
+                            
                             break;
                         case 3:
                             //GamingConsole gamingConsole = new GamingConsole();
