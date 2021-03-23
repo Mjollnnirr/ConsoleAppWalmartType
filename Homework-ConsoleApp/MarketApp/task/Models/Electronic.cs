@@ -147,5 +147,50 @@ namespace task.Models
 
             }
         }
+        public static void SellClasses(ref bool isGoingBack, ref bool goingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
+        {
+        MainTrying:
+            Console.WriteLine("======================================" +
+                "\nPress '1' for Computers" +
+                "\n======================================" +
+                "\nPress '2' for Games" +
+                "\n======================================" +
+                "\nPress '3' for Gaming Console" +
+                "\n======================================" +
+                "\nPress '4' for Phones" +
+                "\n======================================" +
+                "\nPress '5' for go back" +
+                "\n======================================");
+
+            Console.Write("\n\n" +
+                "\n--------------------------------------" +
+                "\nYour choise: ");
+
+            string choise = Console.ReadLine();
+            switch (choise)
+            {
+                case "1":
+                    Computers.Sell(ref isGoingBack, ref isAddingMore, ref finalPay, cartList);
+                    break;
+                case "2":
+                    Games.Sell(ref isGoingBack, ref isAddingMore, ref finalPay, cartList);
+                    break;
+                case "3":
+                    GamingConsole.Sell(ref isGoingBack, ref isAddingMore, ref finalPay, cartList);
+                    break;
+                case "4":
+                    Phones.Sell(ref isGoingBack, ref isAddingMore, ref finalPay, cartList);
+                    break;
+                case "5":
+                    goingBack = true;
+                    break;
+                default:
+                    Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
+                        "\nWrong Choise! Try again!!!" +
+                        "\n++++++++++++++++++++++++++++++++++++++\n\n");
+                    goto MainTrying;
+
+            }
+        }
     }
 }

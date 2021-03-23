@@ -312,7 +312,9 @@ namespace task
 
         public static void SellProduct(bool goingBack)
         {
-        MainTrying:
+            List<Product> cart = new List<Product>();
+            double finalPay = 0;
+            MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Clothing store" +
                 "\n======================================" +
@@ -331,13 +333,31 @@ namespace task
             switch (choise)
             {
                 case "1":
-                    Clothing.ForEachItem();
+                    bool isGoingBack1 = false;
+                    bool isAddingMore1 = false;
+                    Clothing.Sell(ref isGoingBack1, ref isAddingMore1, ref finalPay, cart);
+                    if (isGoingBack1 || isAddingMore1)
+                    {
+                        goto MainTrying;
+                    }
                     break;
                 case "2":
-                    Electronic.Classes();
+                    bool isGoingBack2 = false;
+                    bool isAddingMore2 = false;
+                    Electronic.SellClasses(ref isAddingMore2, ref isGoingBack2, ref isAddingMore2, ref finalPay, cart);
+                    if (isGoingBack2 || isAddingMore2)
+                    {
+                        goto MainTrying;
+                    }
                     break;
                 case "3":
-                    Grocery.ForEachItem();
+                    bool isGoingBack3 = false;
+                    bool isAddingMore3 = false;
+                    Grocery.Sell(ref isGoingBack3, ref isAddingMore3, ref finalPay, cart);
+                    if (isGoingBack3 || isAddingMore3)
+                    {
+                        goto MainTrying;
+                    }
                     break;
                 case "4":
                     goingBack = true;

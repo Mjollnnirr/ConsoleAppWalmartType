@@ -89,5 +89,72 @@ namespace task.Models
             Grocery grocery = new Grocery(name, price, count);
             return grocery;
         }
+        public static void Sell(ref bool isGoingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
+        {
+            foreach (Grocery item in IteratorList)
+            {
+                Console.WriteLine($"ID: {item.Id} - " + item.ToString());
+            }
+            Console.WriteLine("=================================================");
+            int id;
+            ID:
+            try
+            {
+                Console.WriteLine("Press '0' for go back\n------------------------ Or");
+                Console.Write("Enter the ID of product that you want to add to cart: ");
+                id = Convert.ToInt32(Console.ReadLine());
+                if (id == 0)
+                {
+                    isGoingBack = true;
+                    return;
+                }
+                int count;
+                Count:
+                Console.Write("Add count of item: ");
+                try
+                {
+                    count = Convert.ToInt32(Console.ReadLine());
+                    if (!IteratorList.Find(item => item.Id == id).Availablty(count))
+                    {
+                        Console.WriteLine("There is not enough item!\nPlease add less!");
+                        goto Count;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input!\nTry Again!");
+                    goto Count;
+                }
+                for (int i = 0; i < count; i++)
+                {
+                    cartList.Add(IteratorList.Find(item => item.Id == id));
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid ID!\nTry again!");
+                goto ID;
+            }
+            Console.WriteLine("=================================================");
+            WrongAnswer:
+            Console.Write("Item succesfully added to cart!\nDo you want to add more?\n'Y'/'N': ");
+            string answer = Console.ReadLine().Trim().ToUpper();
+            switch (answer)
+            {
+                case "Y":
+                    isAddingMore = true;
+                    break;
+                case "N":
+                    foreach (Product item in cartList)
+                    {
+                        finalPay += item.PricePerCount;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("=================================================");
+                    Console.WriteLine("Wrong answer!\nTry again!");
+                    goto WrongAnswer;
+            }
+        }
     }
 }

@@ -141,9 +141,8 @@ namespace task.Models
                 goto ID;
             }
         }
-        public static void Sell(ref bool isAddingMore, List<Product> cartList)
+        public static void Sell(ref bool isGoingback, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
         {
-            double finalPay = 0;
             foreach (Clothing item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -153,8 +152,14 @@ namespace task.Models
             ID:
             try
             {
+                Console.WriteLine("Press '0' for go back\n------------------------ Or");
                 Console.Write("Enter the ID of product that you want to add to cart: ");
                 id = Convert.ToInt32(Console.ReadLine());
+                if (id == 0)
+                {
+                    isGoingback = true;
+                    return;
+                }
                 int count;
                 Count:
                 Console.Write("Add count of item: ");
