@@ -8,49 +8,52 @@ namespace task
     {
         static void Main(string[] args)
         {
-            List<Product> listOFitems = new List<Product>();
-            Clothing clothing1 = new Clothing("clothing1", 30.5, 4, Sizes.XL);
-            Clothing clothing2 = new Clothing("clothing2", 32.5, 4, Sizes.XL);
-            Clothing clothing3 = new Clothing("clothing3", 33.5, 4, Sizes.XL);
-            Clothing clothing4 = new Clothing("clothing4", 34.5, 4, Sizes.XL);
-            Computers computer1 = new Computers(200, 1, false, CPU.CoreI9, 32, 12);
-            Computers computer2 = new Computers(200, 1, false, CPU.CoreI7, 16, 2);
-            Computers computer3 = new Computers(200, 1, false, CPU.CoreI3, 8, 2);
-            Computers computer4 = new Computers(200, 1, false, CPU.CoreI5, 12, 4);
-            Games game1 = new Games("CoD", 30, 1, Models.Models.Playstation5);
-            Games game2 = new Games("Civ6", 30, 1, Models.Models.XboxSeriesX);
-            Games game3 = new Games("R6", 30, 1, Models.Models.Playstation4);
-            Games game4 = new Games("Zelda", 30, 1, Models.Models.NintendoSwitch);
-            GamingConsole gamingConsole1 = new GamingConsole(Models.Models.Playstation5, 400, 1);
-            GamingConsole gamingConsole2 = new GamingConsole(Models.Models.Playstation4, 400, 1);
-            GamingConsole gamingConsole3 = new GamingConsole(Models.Models.NintendoSwitch, 400, 1);
-            Grocery grocery1 = new Grocery("grocery1", 27.5, 2);
-            Grocery grocery2 = new Grocery("grocery2", 27.5, 2);
-            Grocery grocery3 = new Grocery("grocery3", 27.5, 2);
+            //List<Product> listOFitems = new List<Product>();
+
+            #region Items
+            Clothing clothing1 = new Clothing("LC Waiki", 15.5, 4, Sizes.S);
+            Clothing clothing2 = new Clothing("Adidas", 32.5, 4, Sizes.L);
+            Clothing clothing3 = new Clothing("Jordan", 53.5, 4, Sizes.XXL);
+            Clothing clothing4 = new Clothing("Nike", 34.5, 4, Sizes.M);
+            Computers computer1 = new Computers(2000, 3, false, CPU.CoreI9, 32, 12);
+            Computers computer2 = new Computers(1200, 6, true, CPU.CoreI7, 16, 4);
+            Computers computer3 = new Computers(600, 3, false, CPU.CoreI3, 8, 2);
+            Computers computer4 = new Computers(800, 1, false, CPU.CoreI5, 12, 4);
+            Games game1 = new Games("Call of Duty", 30, 5, Models.Models.Playstation5);
+            Games game2 = new Games("Civilization 6", 25, 3, Models.Models.XboxSeriesX);
+            Games game3 = new Games("Rainbow 6 Siege", 10, 15, Models.Models.Playstation4);
+            Games game4 = new Games("Legend of Zelda", 60, 10, Models.Models.NintendoSwitch);
+            GamingConsole gamingConsole1 = new GamingConsole(Models.Models.Playstation5, 400, 3);
+            GamingConsole gamingConsole2 = new GamingConsole(Models.Models.Playstation4, 400, 5);
+            GamingConsole gamingConsole3 = new GamingConsole(Models.Models.NintendoSwitch, 400, 10);
+            Grocery grocery1 = new Grocery("Coca-Cola", 1.0, 20);
+            Grocery grocery2 = new Grocery("Lay's", 2.5, 10);
+            Grocery grocery3 = new Grocery("Camel", 14.67, 15);
             Phones phones1 = new Phones(400, 2, Brands.iPhone, "7", 128);
             Phones phones2 = new Phones(400, 2, Brands.Samsung, "Galaxy S8", 128);
-            Phones phones3 = new Phones(400, 2, Brands.BlackBerry, "Dont Know", 128);
-            listOFitems.Add(clothing1);
-            listOFitems.Add(clothing2);
-            listOFitems.Add(clothing3);
-            listOFitems.Add(clothing4);
-            listOFitems.Add(computer1);
-            listOFitems.Add(computer2);
-            listOFitems.Add(computer3);
-            listOFitems.Add(computer4);
-            listOFitems.Add(game1);
-            listOFitems.Add(game2);
-            listOFitems.Add(game3);
-            listOFitems.Add(game4);
-            listOFitems.Add(gamingConsole1);
-            listOFitems.Add(gamingConsole2);
-            listOFitems.Add(gamingConsole3);
-            listOFitems.Add(grocery1);
-            listOFitems.Add(grocery2);
-            listOFitems.Add(grocery3);
-            listOFitems.Add(phones1);
-            listOFitems.Add(phones2);
-            listOFitems.Add(phones3);
+            Phones phones3 = new Phones(400, 2, Brands.BlackBerry, "Some BlackBerry", 28);
+            #endregion
+            //listOFitems.Add(clothing1);
+            //listOFitems.Add(clothing2);
+            //listOFitems.Add(clothing3);
+            //listOFitems.Add(clothing4);
+            //listOFitems.Add(computer1);
+            //listOFitems.Add(computer2);
+            //listOFitems.Add(computer3);
+            //listOFitems.Add(computer4);
+            //listOFitems.Add(game1);
+            //listOFitems.Add(game2);
+            //listOFitems.Add(game3);
+            //listOFitems.Add(game4);
+            //listOFitems.Add(gamingConsole1);
+            //listOFitems.Add(gamingConsole2);
+            //listOFitems.Add(gamingConsole3);
+            //listOFitems.Add(grocery1);
+            //listOFitems.Add(grocery2);
+            //listOFitems.Add(grocery3);
+            //listOFitems.Add(phones1);
+            //listOFitems.Add(phones2);
+            //listOFitems.Add(phones3);
 
 
             //foreach (Clothing item in Clothing.IteratorList)
@@ -105,7 +108,7 @@ namespace task
                 "\n======================================" +
                 "\nPress '4' for sell product" +
                 "\n======================================" +
-                "\nPress '5' for exit" +
+                "\nPress '0' for exit" +
                 "\n======================================");
 
             Console.Write("\n\n" +
@@ -113,32 +116,22 @@ namespace task
                 "\nYour choise: ");
             #endregion
             #region Choosing Part
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
-                    bool isGoingBack1 = false;
-                    ItemList(ref isGoingBack1);
-                    if (isGoingBack1 == true)
-                    {
-                        goto TryAgain;
-                    }
-                    break;
+                    ItemList();
+                    goto TryAgain;
                 case "2":
-                    bool isGoingBack2 = false;
-                    AddProduct(ref isGoingBack2);
-                    if (isGoingBack2 == true)
-                    {
-                        goto TryAgain;
-                    }
-                    break;
+                    AddProduct();
+                    goto TryAgain;
                 case "3":
-                    bool isGoingBack3 = false;
-                    RemoveProduct(ref isGoingBack3, 0);
-                    break;
+                    RemoveProduct();
+                    goto TryAgain;
                 case "4":
-                    break;
-                case "5":
+                    SellProduct();
+                    goto TryAgain;
+                case "0":
                     break;
                 default:
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
@@ -151,8 +144,9 @@ namespace task
             #endregion
         }
 
-        public static void ItemList(ref bool goingBack)
+        public static void ItemList()
         {
+            Console.Clear();
         MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Clothing store" +
@@ -161,14 +155,14 @@ namespace task
                 "\n======================================" +
                 "\nPress '3' for Grocery store" +
                 "\n======================================" +
-                "\nPress '4' for go back" +
+                "\nPress '0' for go back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
                 "\n--------------------------------------" +
                 "\nYour choise: ");
 
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
@@ -180,8 +174,7 @@ namespace task
                 case "3":
                     Grocery.ForEachItem();
                     break;
-                case "4":
-                    goingBack = true;
+                case "0":
                     break;
                 default:
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
@@ -192,8 +185,10 @@ namespace task
             }
         }
 
-        public static void RemoveProduct(ref bool goingBack, int id)
+        public static void RemoveProduct()
         {
+            int id = 0;
+            Console.Clear();
         MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Clothing store" +
@@ -202,14 +197,14 @@ namespace task
                 "\n======================================" +
                 "\nPress '3' for Grocery store" +
                 "\n======================================" +
-                "\nPress '4' for go back" +
+                "\nPress '0' for go back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
                 "\n--------------------------------------" +
                 "\nYour choise: ");
 
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
@@ -221,8 +216,7 @@ namespace task
                 case "3":
                     Grocery.Remove(id);
                     break;
-                case "4":
-                    goingBack = true;
+                case "0":
                     break;
                 default:
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
@@ -233,8 +227,9 @@ namespace task
             }
         }
 
-        public static void AddProduct(ref bool goingBack)
+        public static void AddProduct()
         {
+            Console.Clear();
             MainTrying:
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++\n" +
                 "Choose the product type\n" +
@@ -246,14 +241,14 @@ namespace task
                 "\n======================================" +
                 "\nPress '3' for Grocery" +
                 "\n======================================" +
-                "\nPress '4' for Go Back" +
+                "\nPress '0' for Go Back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
                 "\n--------------------------------------" +
                 "\nYour choise: ");
 
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
@@ -267,7 +262,7 @@ namespace task
                     }
                     else if (answer == "N")
                     {
-                        goto case "4";
+                        goto case "0";
                     }
                     else
                     {
@@ -298,8 +293,7 @@ namespace task
                 case "3":
                     Clothing.AddItem();
                     break;
-                case "4":
-                    goingBack = true;
+                case "0":
                     break;
                 default:
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
@@ -310,8 +304,9 @@ namespace task
             }
         }
 
-        public static void SellProduct(bool goingBack)
+        public static void SellProduct()
         {
+            Console.Clear();
             List<Product> cart = new List<Product>();
             double finalPay = 0;
             MainTrying:
@@ -329,7 +324,7 @@ namespace task
                 "\n--------------------------------------" +
                 "\nYour choise: ");
 
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
@@ -360,14 +355,12 @@ namespace task
                     }
                     break;
                 case "4":
-                    goingBack = true;
                     break;
                 default:
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
                     goto MainTrying;
-
             }
         }
     }

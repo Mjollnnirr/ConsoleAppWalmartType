@@ -61,7 +61,7 @@ namespace task.Models
                 $"\nPress 4 for: {Sizes.L}" +
                 $"\nPress 5 for: {Sizes.XL}" +
                 $"\nPress 6 for: {Sizes.XXL}");
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
@@ -91,7 +91,7 @@ namespace task.Models
         public static Clothing AddItem()
         {
             Console.Write("Add clothing name: ");
-            string name = Console.ReadLine();
+            string name = Console.ReadLine().Trim();
             double price;
             Price:
             try
@@ -117,8 +117,9 @@ namespace task.Models
                 goto Count;
             }
             Sizes size = Sizes.S;
-            Clothing.ChooseSize(ref size);
+            ChooseSize(ref size);
             Clothing clothing = new Clothing(name, price, count, size);
+            Console.WriteLine("-----Item succesfully added!-----");
             return clothing;
         }
         public static void Remove(int id)

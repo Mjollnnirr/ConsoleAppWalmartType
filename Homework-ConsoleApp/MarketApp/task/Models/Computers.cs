@@ -133,7 +133,7 @@ namespace task.Models
                 $"\nPress 2 for: {CPU.CoreI5}" +
                 $"\nPress 3 for: {CPU.CoreI7}" +
                 $"\nPress 4 for: {CPU.CoreI9}");
-            string choise = Console.ReadLine();
+            string choise = Console.ReadLine().Trim();
             switch (choise)
             {
                 case "1":
@@ -159,7 +159,7 @@ namespace task.Models
             bool isLabtop;
         Labtop:
             Console.WriteLine("1: Labtop\n2: PC");
-            string Labtop = Console.ReadLine();
+            string Labtop = Console.ReadLine().Trim();
             if (Labtop == "1")
             {
                 isLabtop = true;
@@ -198,7 +198,7 @@ namespace task.Models
                 goto VideoRam;
             }
             CPU cpu;
-            Computers.ChooseCpu(out cpu);
+            ChooseCpu(out cpu);
             double price;
             Price:
             try
@@ -224,6 +224,7 @@ namespace task.Models
                 goto Count;
             }
             Computers computer = new Computers(price, count, isLabtop, cpu, ram, videoRam);
+            Console.WriteLine("-----Computer is succesfully added!-----");
             return computer;
         }
         public static void Sell(ref bool isGoingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
@@ -234,7 +235,7 @@ namespace task.Models
             }
             Console.WriteLine("=================================================");
             int id;
-        ID:
+            ID:
             try
             {
                 Console.WriteLine("Press '0' for go back\n------------------------ Or");
@@ -246,7 +247,7 @@ namespace task.Models
                     return;
                 }
                 int count;
-            Count:
+                Count:
                 Console.Write("Add count of item: ");
                 try
                 {
@@ -273,7 +274,7 @@ namespace task.Models
                 goto ID;
             }
             Console.WriteLine("=================================================");
-        WrongAnswer:
+            WrongAnswer:
             Console.Write("Item succesfully added to cart!\nDo you want to add more?\n'Y'/'N': ");
             string answer = Console.ReadLine().Trim().ToUpper();
             switch (answer)
