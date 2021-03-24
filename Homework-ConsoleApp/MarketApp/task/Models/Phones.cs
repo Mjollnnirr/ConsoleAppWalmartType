@@ -66,6 +66,7 @@ namespace task.Models
         }
         public static void ForEachItem()
         {
+            Console.Clear();
             foreach (Phones item in IteratorList)
             {
                 Console.WriteLine(item.ToString());
@@ -73,6 +74,7 @@ namespace task.Models
         }
         public static void Remove(int id)
         {
+            Console.Clear();
             foreach (Phones item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -90,16 +92,18 @@ namespace task.Models
                 Console.WriteLine("Invalid ID!\nTry again!");
                 goto ID;
             }
+            Console.Clear();
+            Console.WriteLine("-----Item succesfully removed!-----");
         }
         public static Brands ChooseBrand(out Brands brand)
         {
         Brands:
-            Console.WriteLine("Choose brand: ");
             Console.WriteLine($"Press 1 for: {Brands.iPhone}" +
                 $"\nPress 2 for: {Brands.Samsung}" +
                 $"\nPress 3 for: {Brands.LG}" +
                 $"\nPress 4 for: {Brands.Huawei}" +
                 $"\npress 5 for: {Brands.BlackBerry}");
+            Console.Write("Choose brand: ");
             string choise = Console.ReadLine();
             switch (choise)
             {
@@ -167,6 +171,8 @@ namespace task.Models
                 goto Count;
             }
             Phones phones = new Phones(price, count, brand, model, storage);
+            Console.Clear();
+            Console.WriteLine("-----Phone is succesfully added!-----");
             return phones;
         }
         public static void Sell(ref bool isGoingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)

@@ -100,6 +100,7 @@ namespace task.Models
 
         public static void ForEachItem()
         {
+            Console.Clear();
             foreach (Computers item in IteratorList)
             {
                 Console.WriteLine(item.ToString());
@@ -107,6 +108,7 @@ namespace task.Models
         }
         public static void Remove(int id)
         {
+            Console.Clear();
             foreach (Computers item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -124,15 +126,17 @@ namespace task.Models
                 Console.WriteLine("Invalid ID!\nTry again!");
                 goto ID;
             }
+            Console.Clear();
+            Console.WriteLine("-----Item succesfully removed!-----");
         }
         public static CPU ChooseCpu(out CPU cpu)
         {
         CPU:
-            Console.WriteLine("CPU: ");
             Console.WriteLine($"Press 1 for: {CPU.CoreI3}" +
                 $"\nPress 2 for: {CPU.CoreI5}" +
                 $"\nPress 3 for: {CPU.CoreI7}" +
                 $"\nPress 4 for: {CPU.CoreI9}");
+            Console.Write("CPU: ");
             string choise = Console.ReadLine().Trim();
             switch (choise)
             {
@@ -159,6 +163,7 @@ namespace task.Models
             bool isLabtop;
         Labtop:
             Console.WriteLine("1: Labtop\n2: PC");
+            Console.Write("Your choise: ");
             string Labtop = Console.ReadLine().Trim();
             if (Labtop == "1")
             {
@@ -224,6 +229,7 @@ namespace task.Models
                 goto Count;
             }
             Computers computer = new Computers(price, count, isLabtop, cpu, ram, videoRam);
+            Console.Clear();
             Console.WriteLine("-----Computer is succesfully added!-----");
             return computer;
         }

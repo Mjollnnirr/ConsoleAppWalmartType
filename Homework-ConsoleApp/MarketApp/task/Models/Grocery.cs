@@ -32,6 +32,7 @@ namespace task.Models
         }
         public static void ForEachItem()
         {
+            Console.Clear();
             foreach (Grocery item in IteratorList)
             {
                 Console.WriteLine(item.ToString());
@@ -40,6 +41,7 @@ namespace task.Models
 
         public static void Remove(int id)
         {
+            Console.Clear();
             foreach (Grocery item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -57,6 +59,8 @@ namespace task.Models
                 Console.WriteLine("Invalid ID!\nTry again!");
                 goto ID;
             }
+            Console.Clear();
+            Console.WriteLine("-----Item succesfully removed!-----");
         }
         public static Grocery AddItem()
         {
@@ -87,6 +91,8 @@ namespace task.Models
                 goto Count;
             }
             Grocery grocery = new Grocery(name, price, count);
+            Console.Clear();
+            Console.WriteLine("-----Item is succesfully added!-----");
             return grocery;
         }
         public static void Sell(ref bool isGoingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)

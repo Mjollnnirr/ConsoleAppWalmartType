@@ -46,6 +46,7 @@ namespace task.Models
 
         public static void ForEachItem()
         {
+            Console.Clear();
             foreach (Clothing item in IteratorList)
             {
                 Console.WriteLine(item.ToString());
@@ -54,13 +55,13 @@ namespace task.Models
         public static Sizes ChooseSize(ref Sizes size)
         {
             Sizes:
-            Console.WriteLine("Sizes: ");
             Console.WriteLine($"Press 1 for: {Sizes.XS}" +
                 $"\nPress 2 for: {Sizes.S}" +
                 $"\nPress 3 for: {Sizes.M}" +
                 $"\nPress 4 for: {Sizes.L}" +
                 $"\nPress 5 for: {Sizes.XL}" +
                 $"\nPress 6 for: {Sizes.XXL}");
+            Console.Write("Sizes: ");
             string choise = Console.ReadLine().Trim();
             switch (choise)
             {
@@ -119,11 +120,13 @@ namespace task.Models
             Sizes size = Sizes.S;
             ChooseSize(ref size);
             Clothing clothing = new Clothing(name, price, count, size);
+            Console.Clear();
             Console.WriteLine("-----Item succesfully added!-----");
             return clothing;
         }
         public static void Remove(int id)
         {
+            Console.Clear();
             foreach (Clothing item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -134,13 +137,52 @@ namespace task.Models
             {
                 Console.Write("Enter the ID of product that you want to remove: ");
                 id = Convert.ToInt32(Console.ReadLine());
-                IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                Console.Clear();
+                //IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                Console.WriteLine(IteratorList.Find(item => item.Id == id).ToString());
+                Clothing item = IteratorList.Find(item => item.Id == id);
+                int count;
+                Count:
+                Console.Write("Enter count of item that you want to remove: ");
+                try
+                {
+                    count = Convert.ToInt32(Console.ReadLine());
+                    if (count <= 0)
+                    {
+                        Console.WriteLine("Count must be more than '0'");
+                        goto Count;
+                    }
+                    if (count > item.ProductCount)
+                    {
+                        Console.WriteLine($"Only {item.ProductCount} left!\nPlease add less!");
+                        goto Count;
+                    }
+                    else if (count == item.ProductCount)
+                    {
+                        IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                        Console.WriteLine("Item removed!");
+                    }
+                    else if (count < item.ProductCount && count > 0)
+                    {
+                        item.ProductCount -= count;
+                        IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                        IteratorList.Add(item);
+                        Console.WriteLine($"{count} of item is removed!");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid count!\nTry again!");
+                    goto Count;
+                }
             }
             catch (Exception)
             {
                 Console.WriteLine("Invalid ID!\nTry again!");
                 goto ID;
             }
+            //Console.Clear();
+            Console.WriteLine("-----Item succesfully removed!-----");
         }
         public static void Sell(ref bool isGoingback, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
         {

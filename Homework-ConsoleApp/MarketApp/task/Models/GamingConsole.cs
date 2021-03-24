@@ -53,6 +53,7 @@ namespace task.Models
         }
         public static void ForEachItem()
         {
+            Console.Clear();
             foreach (GamingConsole item in IteratorList)
             {
                 Console.WriteLine(item.ToString());
@@ -60,6 +61,7 @@ namespace task.Models
         }
         public static void Remove(int id)
         {
+            Console.Clear();
             foreach (GamingConsole item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -77,16 +79,18 @@ namespace task.Models
                 Console.WriteLine("Invalid ID!\nTry again!");
                 goto ID;
             }
+            Console.Clear();
+            Console.WriteLine("-----Item succesfully removed!-----");
         }
         public static Models ChooseModel(out Models model)
         {
             Models:
-            Console.WriteLine("Working on: ");
             Console.WriteLine($"Press 1 for: {Models.Playstation5}" +
                 $"\nPress 2 for: {Models.Playstation4}" +
                 $"\nPress 3 for: {Models.NintendoSwitch}" +
                 $"\nPress 4 for: {Models.XboxSeriesX}" +
                 $"\npress 5 for: {Models.XboxSeriesS}");
+            Console.Write("Working on: ");
             string choise = Console.ReadLine();
             switch (choise)
             {
@@ -140,6 +144,8 @@ namespace task.Models
                 goto Count;
             }
             GamingConsole gamingConsole = new GamingConsole(model, price, count);
+            Console.Clear();
+            Console.WriteLine("-----Gaming Console is succesfully added!-----");
             return gamingConsole;
         }
         public static void Sell(ref bool isGoingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)

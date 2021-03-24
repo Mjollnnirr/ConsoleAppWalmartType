@@ -21,6 +21,7 @@ namespace task.Models
         }
         public static void Classes()
         {
+            Console.Clear();
             MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Computers" +
@@ -31,7 +32,7 @@ namespace task.Models
                 "\n======================================" +
                 "\nPress '4' for Phones" +
                 "\n======================================" +
-                "\nPress '5' for go back" +
+                "\nPress '0' for go back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
@@ -53,9 +54,11 @@ namespace task.Models
                 case "4":
                     Phones.ForEachItem();
                     break;
-                case "5":
+                case "0":
+                    Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
@@ -65,7 +68,8 @@ namespace task.Models
         }
         public static void Classes(int id)
         {
-        MainTrying:
+            Console.Clear();
+            MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Computers" +
                 "\n======================================" +
@@ -75,7 +79,7 @@ namespace task.Models
                 "\n======================================" +
                 "\nPress '4' for Phones" +
                 "\n======================================" +
-                "\nPress '5' for go back" +
+                "\nPress '0' for go back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
@@ -97,9 +101,11 @@ namespace task.Models
                 case "4":
                     Phones.Remove(id);
                     break;
-                case "5":
+                case "0":
+                    Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
@@ -109,6 +115,7 @@ namespace task.Models
         }
         public static int Classes(out int result)
         {
+            Console.Clear();
         MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Computers" +
@@ -119,7 +126,7 @@ namespace task.Models
                 "\n======================================" +
                 "\nPress '4' for Phones" +
                 "\n======================================" +
-                "\nPress '5' for go back" +
+                "\nPress '0' for go back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
@@ -137,9 +144,11 @@ namespace task.Models
                     return result = 3;
                 case "4":
                     return result = 4;
-                case "5":
+                case "0":
+                    Console.Clear();
                     return result = 0;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");

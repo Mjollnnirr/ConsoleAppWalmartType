@@ -8,8 +8,6 @@ namespace task
     {
         static void Main(string[] args)
         {
-            //List<Product> listOFitems = new List<Product>();
-
             #region Items
             Clothing clothing1 = new Clothing("LC Waiki", 15.5, 4, Sizes.S);
             Clothing clothing2 = new Clothing("Adidas", 32.5, 4, Sizes.L);
@@ -33,16 +31,21 @@ namespace task
             Grocery grocery5 = new Grocery("Captain Morgan", 40, 9);
             Grocery grocery6 = new Grocery("Toblerone", 5, 7);
             Grocery grocery7 = new Grocery("Absolute", 40, 10);
-            Grocery grocery8 = new Grocery("Absolute", 40, 10);
-            Grocery grocery9 = new Grocery("Absolute", 40, 10);
-            Grocery grocery10 = new Grocery("Absolute", 40, 10);
-            Grocery grocery11 = new Grocery("Absolute", 40, 10);
-            Grocery grocery12 = new Grocery("Absolute", 40, 10);
-            Grocery grocery13 = new Grocery("Absolute", 40, 10);
+            Grocery grocery8 = new Grocery("M&M's", 1, 10);
+            Grocery grocery9 = new Grocery("Oreo", 3, 10);
+            Grocery grocery10 = new Grocery("Ramen", 0.4, 10);
+            Grocery grocery11 = new Grocery("Frozen Shrimp", 10, 10);
+            Grocery grocery12 = new Grocery("Toilet Paper Bounty", 3, 10);
+            Grocery grocery13 = new Grocery("Frozen Chicken Wings", 20, 10);
             Phones phones1 = new Phones(400, 2, Brands.iPhone, "7", 128);
             Phones phones2 = new Phones(400, 2, Brands.Samsung, "Galaxy S8", 128);
             Phones phones3 = new Phones(400, 2, Brands.BlackBerry, "Some BlackBerry", 28);
             #endregion
+
+            #region AddingItemsComments
+            //List<Product> listOFitems = new List<Product>();
+
+
             //listOFitems.Add(clothing1);
             //listOFitems.Add(clothing2);
             //listOFitems.Add(clothing3);
@@ -97,6 +100,7 @@ namespace task
             //}
 
             //Clothing.ItemList.Add(c2);
+            #endregion
 
             #region Welcoming
             Console.WriteLine(@"                ▄█     █▄     ▄████████  ▄█        ▄████████  ▄██████▄    ▄▄▄▄███▄▄▄▄      ▄████████ 
@@ -144,11 +148,10 @@ namespace task
                 case "0":
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
-                    //string aa = "--------------------------------------";
-                    //Console.WriteLine(aa.Length);
                     goto TryAgain;
             }
             #endregion
@@ -185,8 +188,10 @@ namespace task
                     Grocery.ForEachItem();
                     break;
                 case "0":
+                    Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
@@ -199,7 +204,7 @@ namespace task
         {
             int id = 0;
             Console.Clear();
-        MainTrying:
+            MainTrying:
             Console.WriteLine("======================================" +
                 "\nPress '1' for Clothing store" +
                 "\n======================================" +
@@ -219,21 +224,57 @@ namespace task
             {
                 case "1":
                     Clothing.Remove(id);
-                    break;
+                    RemoveMore:
+                    Console.WriteLine("Do you want to remove more?\n'Y'/'N'");
+                    string answer = Console.ReadLine().ToUpper().Trim();
+                    if (answer == "Y")
+                    {
+                        Console.Clear();
+                        goto MainTrying;
+                    }
+                    else if (answer == "N")
+                    {
+                        goto case "0";
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Wrong choise!\nTry again!");
+                        goto RemoveMore;
+                    }
                 case "2":
-                    Electronic.Classes(id);
-                    break;
+                    int result;
+                    Electronic.Classes(out result);
+                    switch (result)
+                    {
+                        case 1:
+                            Computers.Remove(id);
+                            break;
+                        case 2:
+                            Games.Remove(id);
+                            break;
+                        case 3:
+                            GamingConsole.Remove(id);
+                            break;
+                        case 4:
+                            Phones.Remove(id);
+                            break;
+                        case 0:
+                            goto MainTrying;
+                    }
+                    goto RemoveMore;
                 case "3":
                     Grocery.Remove(id);
-                    break;
+                    goto RemoveMore;
                 case "0":
+                    Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
                     goto MainTrying;
-
             }
         }
 
@@ -302,10 +343,12 @@ namespace task
                     goto AddMore;
                 case "3":
                     Clothing.AddItem();
-                    break;
+                    goto AddMore;
                 case "0":
+                    Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
