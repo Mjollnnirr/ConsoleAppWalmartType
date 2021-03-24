@@ -33,6 +33,7 @@ namespace task
             Grocery grocery5 = new Grocery("Captain Morgan", 40, 9);
             Grocery grocery6 = new Grocery("Toblerone", 5, 7);
             Grocery grocery7 = new Grocery("Absolute", 40, 10);
+            Grocery grocery8 = new Grocery("Absolute", 40, 10);
             Phones phones1 = new Phones(400, 2, Brands.iPhone, "7", 128);
             Phones phones2 = new Phones(400, 2, Brands.Samsung, "Galaxy S8", 128);
             Phones phones3 = new Phones(400, 2, Brands.BlackBerry, "Some BlackBerry", 28);
