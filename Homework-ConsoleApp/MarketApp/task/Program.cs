@@ -21,6 +21,7 @@ namespace task
             Games game2 = new Games("Civilization 6", 25, 3, Models.Models.XboxSeriesX);
             Games game3 = new Games("Rainbow 6 Siege", 10, 15, Models.Models.Playstation4);
             Games game4 = new Games("Legend of Zelda", 60, 10, Models.Models.NintendoSwitch);
+            Games game5 = new Games("Witcher 3", 30, 5, Models.Models.XboxSeriesS);
             GamingConsole gamingConsole1 = new GamingConsole(Models.Models.Playstation5, 400, 3);
             GamingConsole gamingConsole2 = new GamingConsole(Models.Models.Playstation4, 400, 5);
             GamingConsole gamingConsole3 = new GamingConsole(Models.Models.NintendoSwitch, 400, 10);
@@ -40,66 +41,6 @@ namespace task
             Phones phones1 = new Phones(400, 2, Brands.iPhone, "7", 128);
             Phones phones2 = new Phones(400, 2, Brands.Samsung, "Galaxy S8", 128);
             Phones phones3 = new Phones(400, 2, Brands.BlackBerry, "Some BlackBerry", 28);
-            #endregion
-
-            #region AddingItemsComments
-            //List<Product> listOFitems = new List<Product>();
-
-
-            //listOFitems.Add(clothing1);
-            //listOFitems.Add(clothing2);
-            //listOFitems.Add(clothing3);
-            //listOFitems.Add(clothing4);
-            //listOFitems.Add(computer1);
-            //listOFitems.Add(computer2);
-            //listOFitems.Add(computer3);
-            //listOFitems.Add(computer4);
-            //listOFitems.Add(game1);
-            //listOFitems.Add(game2);
-            //listOFitems.Add(game3);
-            //listOFitems.Add(game4);
-            //listOFitems.Add(gamingConsole1);
-            //listOFitems.Add(gamingConsole2);
-            //listOFitems.Add(gamingConsole3);
-            //listOFitems.Add(grocery1);
-            //listOFitems.Add(grocery2);
-            //listOFitems.Add(grocery3);
-            //listOFitems.Add(phones1);
-            //listOFitems.Add(phones2);
-            //listOFitems.Add(phones3);
-
-
-            //foreach (Clothing item in Clothing.IteratorList)
-            //{
-            //    Console.WriteLine(item.ToString());
-            //}
-
-            //foreach (Computers item in Computers.IteratorList)
-            //{
-            //    Console.WriteLine(item.ToString());
-            //}
-
-            //foreach (Games item in Games.IteratorList)
-            //{
-            //    Console.WriteLine(item.ToString());
-            //}
-
-            //foreach (GamingConsole item in GamingConsole.IteratorList)
-            //{
-            //    Console.WriteLine(item.ToString());
-            //}
-
-            //foreach (Grocery item in Grocery.IteratorList)
-            //{
-            //    Console.WriteLine(item.ToString());
-            //}
-
-            //foreach (Phones item in Phones.IteratorList)
-            //{
-            //    Console.WriteLine(item.ToString());
-            //}
-
-            //Clothing.ItemList.Add(c2);
             #endregion
 
             #region Welcoming
