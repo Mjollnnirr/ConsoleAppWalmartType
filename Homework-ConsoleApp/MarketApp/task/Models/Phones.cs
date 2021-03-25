@@ -72,9 +72,33 @@ namespace task.Models
                 Console.WriteLine(item.ToString());
             }
         }
+        //public static void Remove(int id)
+        //{
+        //    Console.Clear();
+        //    foreach (Phones item in IteratorList)
+        //    {
+        //        Console.WriteLine($"ID: {item.Id} - " + item.ToString());
+        //    }
+        //    Console.WriteLine("=================================================");
+        //ID:
+        //    try
+        //    {
+        //        Console.Write("Enter the ID of product that you want to remove: ");
+        //        id = Convert.ToInt32(Console.ReadLine());
+        //        IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Console.WriteLine("Invalid ID!\nTry again!");
+        //        goto ID;
+        //    }
+        //    Console.Clear();
+        //    Console.WriteLine("-----Item succesfully removed!-----");
+        //}
         public static void Remove(int id)
         {
             Console.Clear();
+        CouldNotFound:
             foreach (Phones item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -84,15 +108,66 @@ namespace task.Models
             try
             {
                 Console.Write("Enter the ID of product that you want to remove: ");
-                id = Convert.ToInt32(Console.ReadLine());
-                IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                try
+                {
+                    id = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid ID!\nTry again!");
+                    goto ID;
+                }
+                Console.Clear();
+                //IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                //Console.WriteLine(IteratorList.Find(item => item.Id == id));
+                if (IteratorList.Find(item => item.Id == id) == null)
+                {
+                    Console.WriteLine("ID could not found!\nTry again!");
+                    goto CouldNotFound;
+                }
+                Phones item = IteratorList.Find(item => item.Id == id);
+                int count;
+            Count:
+                Console.WriteLine(item.ToString());
+                Console.Write("Enter count of item that you want to remove: ");
+                try
+                {
+                    count = Convert.ToInt32(Console.ReadLine());
+                    if (count <= 0)
+                    {
+                        Console.WriteLine("Count must be more than '0'");
+                        goto Count;
+                    }
+                    if (count > item.ProductCount)
+                    {
+                        Console.WriteLine($"Only {item.ProductCount} left!\nPlease add less!");
+                        goto Count;
+                    }
+                    else if (count == item.ProductCount)
+                    {
+                        IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                        Console.WriteLine("Item removed!");
+                    }
+                    else if (count < item.ProductCount && count > 0)
+                    {
+                        item.ProductCount -= count;
+                        IteratorList.Remove(IteratorList.Find(item => item.Id == id));
+                        IteratorList.Add(item);
+                        Console.WriteLine($"{count} of item is removed!");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid count!\nTry again!");
+                    goto Count;
+                }
             }
             catch (Exception)
             {
                 Console.WriteLine("Invalid ID!\nTry again!");
                 goto ID;
             }
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("-----Item succesfully removed!-----");
         }
         public static Brands ChooseBrand(out Brands brand)
@@ -175,8 +250,10 @@ namespace task.Models
             Console.WriteLine("-----Phone is succesfully added!-----");
             return phones;
         }
-        public static void Sell(ref bool isGoingBack, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
+        public static void Sell(ref bool isGoingback, ref bool isAddingMore, ref double finalPay, List<Product> cartList)
         {
+            isGoingback = false;
+            isAddingMore = false;
             foreach (Phones item in IteratorList)
             {
                 Console.WriteLine($"ID: {item.Id} - " + item.ToString());
@@ -188,21 +265,45 @@ namespace task.Models
             {
                 Console.WriteLine("Press '0' for go back\n------------------------ Or");
                 Console.Write("Enter the ID of product that you want to add to cart: ");
-                id = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    id = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid ID!\nTry Again!");
+                    goto ID;
+                }
                 if (id == 0)
                 {
-                    isGoingBack = true;
+                    isGoingback = true;
+                    Console.Clear();
                     return;
                 }
+                Phones item = IteratorList.Find(item => item.Id == id);
+                if (item == null)
+                {
+                    Console.WriteLine("There is no item found on this item\nAdd other ID");
+                    goto ID;
+                }
                 int count;
+                Console.Clear();
             Count:
+                Console.WriteLine(item.ToString());
                 Console.Write("Add count of item: ");
                 try
                 {
                     count = Convert.ToInt32(Console.ReadLine());
-                    if (!IteratorList.Find(item => item.Id == id).Availablty(count))
+                    if (item.ProductCount < count)
                     {
+                        Console.Clear();
                         Console.WriteLine("There is not enough item!\nPlease add less!");
+                        goto Count;
+                    }
+                    else if (count <= 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Count must bu more than '0'");
                         goto Count;
                     }
                 }
@@ -213,7 +314,15 @@ namespace task.Models
                 }
                 for (int i = 0; i < count; i++)
                 {
-                    cartList.Add(IteratorList.Find(item => item.Id == id));
+                    cartList.Add(item);
+                }
+                if (item.ProductCount == count)
+                {
+                    IteratorList.Remove(item);
+                }
+                else
+                {
+                    item.ProductCount -= count;
                 }
             }
             catch (Exception)
@@ -235,6 +344,10 @@ namespace task.Models
                     {
                         finalPay += item.PricePerCount;
                     }
+                    Console.Clear();
+                    Console.WriteLine($"Your final pay is: {finalPay} $");
+                    finalPay = 0;
+                    cartList.Clear();
                     break;
                 default:
                     Console.WriteLine("=================================================");

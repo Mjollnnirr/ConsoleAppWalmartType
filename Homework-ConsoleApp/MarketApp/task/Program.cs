@@ -311,7 +311,7 @@ namespace task
                 "\n======================================" +
                 "\nPress '3' for Grocery store" +
                 "\n======================================" +
-                "\nPress '4' for go back" +
+                "\nPress '0' for go back" +
                 "\n======================================");
 
             Console.Write("\n\n" +
@@ -322,6 +322,7 @@ namespace task
             switch (choise)
             {
                 case "1":
+                    Console.Clear();
                     bool isGoingBack1 = false;
                     bool isAddingMore1 = false;
                     Clothing.Sell(ref isGoingBack1, ref isAddingMore1, ref finalPay, cart);
@@ -331,6 +332,7 @@ namespace task
                     }
                     break;
                 case "2":
+                    Console.Clear();
                     bool isGoingBack2 = false;
                     bool isAddingMore2 = false;
                     Electronic.SellClasses(ref isAddingMore2, ref isGoingBack2, ref isAddingMore2, ref finalPay, cart);
@@ -340,6 +342,7 @@ namespace task
                     }
                     break;
                 case "3":
+                    Console.Clear();
                     bool isGoingBack3 = false;
                     bool isAddingMore3 = false;
                     Grocery.Sell(ref isGoingBack3, ref isAddingMore3, ref finalPay, cart);
@@ -348,9 +351,11 @@ namespace task
                         goto MainTrying;
                     }
                     break;
-                case "4":
+                case "0":
+                    Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("\n\n++++++++++++++++++++++++++++++++++++++" +
                         "\nWrong Choise! Try again!!!" +
                         "\n++++++++++++++++++++++++++++++++++++++\n\n");
