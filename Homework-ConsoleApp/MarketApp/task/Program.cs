@@ -155,6 +155,14 @@ namespace task
                     goto TryAgain;
             }
             #endregion
+
+
+            #region ggggg
+            foreach (var item in Clothing.IteratorList)
+            {
+                
+            }
+            #endregion
         }
 
         public static void ItemList()
