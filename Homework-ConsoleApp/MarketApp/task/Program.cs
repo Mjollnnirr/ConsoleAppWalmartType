@@ -160,7 +160,7 @@ namespace task
             #region ggggg
             foreach (var item in Clothing.IteratorList)
             {
-                
+                Console.WriteLine();
             }
             #endregion
         }
