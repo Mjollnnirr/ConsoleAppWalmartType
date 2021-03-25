@@ -155,14 +155,6 @@ namespace task
                     goto TryAgain;
             }
             #endregion
-
-
-            #region ggggg
-            foreach (var item in Clothing.IteratorList)
-            {
-                Console.WriteLine(item.ToString());
-            }
-            #endregion
         }
 
         public static void ItemList()
